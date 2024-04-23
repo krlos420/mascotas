@@ -47,4 +47,6 @@ public abstract class Animal {
     }
     public abstract void habla();
     public abstract void aniversario();
+    public abstract void mostrarInfo();
+    public abstract String toString();
 }

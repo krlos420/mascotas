@@ -1,4 +1,4 @@
-public class Gato extends Animal{
+public class Gato extends Animal implements Mascota{
     private String raza;
     private boolean pelo_largo;
 
@@ -34,5 +34,25 @@ public class Gato extends Animal{
         int edad = this.getEdad()+1;
         setEdad(edad);
         System.out.println("La edad del gato es "+this.getEdad()+" años humanos o "+this.getEdad()*5+ " en años de gato");
+    }
+    public String toString(){
+        return "Gato con código "+ this.getCodigo();
+    }
+    public void cortarPelo(){
+        setPelo_largo(false);
+    }
+    @Override
+    public void jugar(){
+        System.out.println("Rasca la cuerda");
+    }
+
+    @Override
+    public void mostrarInfo() {
+        System.out.println("El codigo de este gato es "+ this.getCodigo());
+        System.out.println("Este animal tiene "+this.getPatas()+" patas");
+        System.out.println("Este animal tiene "+this.getEdad()+" años");
+        System.out.println("La fecha de nacimiento es: "+this.getFecha_nacimiento());
+        System.out.println("La raza es: "+this.getRaza());
+        System.out.println("Pelo largo?: "+this.isPelo_largo());
     }
 }

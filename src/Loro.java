@@ -1,4 +1,4 @@
-public class Loro extends Ave{
+public class Loro extends Ave implements Mascota{
     private String tipo;
     private boolean habla;
 
@@ -38,5 +38,25 @@ public class Loro extends Ave{
         int edad = this.getEdad()+1;
         setEdad(edad);
         System.out.println("La edad del loro es "+this.getEdad()+" años humanos o "+this.getEdad()*10+ " en años de loro");
+    }
+    public String toString(){
+        return "Loro con código "+ this.getCodigo();
+    }
+    public void saluda(){
+        System.out.println("HOLA, HOLA");
+    }
+    @Override
+    public void jugar(){
+        System.out.println("Saluda a quien pase");
+    }
+
+    @Override
+    public void mostrarInfo() {
+        System.out.println("El codigo de este loro es "+ this.getCodigo());
+        System.out.println("Este animal tiene "+this.getPatas()+" patas");
+        System.out.println("Este animal tiene "+this.getEdad()+" años");
+        System.out.println("La fecha de nacimiento es: "+this.getFecha_nacimiento());
+        System.out.println("Es del tipo: "+this.getTipo());
+        System.out.println("Habla?: "+this.isHabla());
     }
 }

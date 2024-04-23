@@ -1,4 +1,4 @@
-public class Perro extends Animal{
+public class Perro extends Animal implements Mascota{
     private String raza;
     private boolean desparasitado;
     private int num_vacunas;
@@ -44,5 +44,26 @@ public class Perro extends Animal{
         int edad = this.getEdad()+1;
         setEdad(edad);
         System.out.println("La edad del perro es "+this.getEdad()+" años humanos o "+this.getEdad()*7+ " en años de perro");
+    }
+    public String toString(){
+        return "Perro con código "+ this.getCodigo();
+    }
+    public void vacunar(){
+        int vacunes = this.getNum_vacunas()+1;
+        setDesparasitado(true);
+    }
+    @Override
+    public void jugar(){
+        System.out.println("Dame la pata");
+        System.out.println("Coge el palo");
+    }
+    public void mostrarInfo(){
+        System.out.println("El codigo de este perro es "+ this.getCodigo());
+        System.out.println("Este animal tiene "+this.getPatas()+" patas");
+        System.out.println("Este animal tiene "+this.getEdad()+" años");
+        System.out.println("La fecha de nacimiento es: "+this.getFecha_nacimiento());
+        System.out.println("La raza es: "+this.getRaza());
+        System.out.println("Desparasitado?: "+this.isDesparasitado());
+        System.out.println("Tiene "+this.getNum_vacunas()+" vacunas");
     }
 }

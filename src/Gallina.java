@@ -28,4 +28,16 @@ public class Gallina extends Ave{
         setEdad(edad);
         System.out.println("La edad de la gallina es "+this.getEdad()+" años humanos o "+this.getEdad()*8+ " en años de gallina");
     }
+    public String toString(){
+        return "Gallina con código "+ this.getCodigo();
+    }
+
+    @Override
+    public void mostrarInfo() {
+        System.out.println("El codigo de esta gallina es "+ this.getCodigo());
+        System.out.println("Este animal tiene "+this.getPatas()+" patas");
+        System.out.println("Este animal tiene "+this.getEdad()+" años");
+        System.out.println("La fecha de nacimiento es: "+this.getFecha_nacimiento());
+        System.out.println("Ponedora?: "+this.isPonedora());
+    }
 }
