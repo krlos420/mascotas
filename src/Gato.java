@@ -1,9 +1,10 @@
 public class Gato extends Animal implements Mascota{
     private String raza;
     private boolean pelo_largo;
+    private String nom;
 
     //Constructors
-    public Gato(String codigo, int patas, int edad, String fecha_nacimiento, String raza, boolean pelo_largo) {
+    public Gato(String codigo, int patas, int edad, String fecha_nacimiento, String raza, boolean pelo_largo) throws ExcepcioEdat{
         super(codigo, patas, edad, fecha_nacimiento);
         this.raza = raza;
         this.pelo_largo = pelo_largo;
@@ -44,6 +45,16 @@ public class Gato extends Animal implements Mascota{
     @Override
     public void jugar(){
         System.out.println("Rasca la cuerda");
+    }
+
+    @Override
+    public void setNombre(String nom) {
+
+    }
+
+    @Override
+    public String getNombre() {
+        return nom;
     }
 
     @Override

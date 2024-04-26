@@ -1,13 +1,16 @@
-public abstract class Animal {
+public abstract class Animal implements Comparable<Animal>{
     private String codigo;
     private int patas;
     private int edad;
     private String fecha_nacimiento;
 
     //Constructors
-    public Animal(String codigo, int patas, int edad, String fecha_nacimiento) {
+    public Animal(String codigo, int patas, int edad, String fecha_nacimiento) throws ExcepcioEdat{
         this.codigo = codigo;
         this.patas = patas;
+        if (edad<0){
+            throw new ExcepcioEdat("La edad no pot ser negativa");
+        }
         this.edad = edad;
         this.fecha_nacimiento = fecha_nacimiento;
     }
@@ -49,4 +52,9 @@ public abstract class Animal {
     public abstract void aniversario();
     public abstract void mostrarInfo();
     public abstract String toString();
+
+    @Override
+    public int compareTo(Animal o) {
+        return this.codigo.compareTo(o.codigo);
+    }
 }

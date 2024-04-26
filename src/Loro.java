@@ -1,9 +1,10 @@
 public class Loro extends Ave implements Mascota{
     private String tipo;
     private boolean habla;
+    private String nom;
 
     //Constructors
-    public Loro(String codigo, int patas, int edad, String fecha_nacimiento, boolean pico, boolean vuela, String tipo, boolean habla) {
+    public Loro(String codigo, int patas, int edad, String fecha_nacimiento, boolean pico, boolean vuela, String tipo, boolean habla) throws ExcepcioEdat{
         super(codigo, patas, edad, fecha_nacimiento, pico, vuela);
         this.tipo = tipo;
         this.habla = habla;
@@ -48,6 +49,16 @@ public class Loro extends Ave implements Mascota{
     @Override
     public void jugar(){
         System.out.println("Saluda a quien pase");
+    }
+
+    @Override
+    public void setNombre(String nom) {
+
+    }
+
+    @Override
+    public String getNombre() {
+        return nom;
     }
 
     @Override

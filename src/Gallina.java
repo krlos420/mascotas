@@ -1,7 +1,7 @@
 public class Gallina extends Ave{
     private boolean ponedora;
     //Constructors
-    public Gallina(String codigo, int patas, int edad, String fecha_nacimiento, boolean pico, boolean vuela, boolean ponedora) {
+    public Gallina(String codigo, int patas, int edad, String fecha_nacimiento, boolean pico, boolean vuela, boolean ponedora) throws ExcepcioEdat{
         super(codigo, patas, edad, fecha_nacimiento, pico, vuela);
         this.ponedora = ponedora;
     }

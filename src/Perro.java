@@ -2,9 +2,10 @@ public class Perro extends Animal implements Mascota{
     private String raza;
     private boolean desparasitado;
     private int num_vacunas;
+    private String nom;
 
     //Constructors
-    public Perro(String codigo, int patas, int edad, String fecha_nacimiento, String raza, boolean desparasitado, int num_vacunas) {
+    public Perro(String codigo, int patas, int edad, String fecha_nacimiento, String raza, boolean desparasitado, int num_vacunas) throws ExcepcioEdat {
         super(codigo, patas, edad, fecha_nacimiento);
         this.raza = raza;
         this.desparasitado = desparasitado;
@@ -57,6 +58,17 @@ public class Perro extends Animal implements Mascota{
         System.out.println("Dame la pata");
         System.out.println("Coge el palo");
     }
+
+    @Override
+    public void setNombre(String nom) {
+
+    }
+
+    @Override
+    public String getNombre() {
+        return nom;
+    }
+
     public void mostrarInfo(){
         System.out.println("El codigo de este perro es "+ this.getCodigo());
         System.out.println("Este animal tiene "+this.getPatas()+" patas");

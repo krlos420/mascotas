@@ -3,7 +3,7 @@ public abstract class Ave extends Animal {
     private boolean vuela;
 
     //Constructors
-    public Ave(String codigo, int patas, int edad, String fecha_nacimiento, boolean pico, boolean vuela) {
+    public Ave(String codigo, int patas, int edad, String fecha_nacimiento, boolean pico, boolean vuela) throws ExcepcioEdat{
         super(codigo, patas, edad, fecha_nacimiento);
         this.pico = pico;
         this.vuela = vuela;
