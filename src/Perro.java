@@ -61,7 +61,7 @@ public class Perro extends Animal implements Mascota{
 
     @Override
     public void setNombre(String nom) {
-
+        this.nom = nom;
     }
 
     @Override

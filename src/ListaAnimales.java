@@ -12,7 +12,8 @@ public class ListaAnimales {
             System.out.println("3. Mostrar todos los datos de un animal");
             System.out.println("4. Insertar nuevo animal");
             System.out.println("5. Eliminar un animal");
-            System.out.println("6. Salir");
+            System.out.println("6. Alta de mascota");
+            System.out.println("7. Salir");
             int opc = Leer.leerEntero("Que quieres hacer? ");
             if (opc == 1) {
                 for (int i = 0; i < animales.size(); i++) {
@@ -127,13 +128,25 @@ public class ListaAnimales {
                 }
             }
             if (opc == 5) {
-                int eliminar = Leer.leerEntero("Que animal quieres eliminar? ");
                 for (int i = 0; i < animales.size(); i++) {
                     System.out.println(i + "-" + animales.get(i));
                 }
+                int eliminar = Leer.leerEntero("Que animal quieres eliminar? ");
                 animales.remove(eliminar);
             }
-            if (opc == 6){
+            if (opc ==6){
+                for (int i = 0; i < animales.size(); i++) {
+                    System.out.println(i + "-" + animales.get(i));
+                }
+                int masc = Leer.leerEntero("Que mascota quieres dar de alta? (solo perros, gatos y loros) ");
+                if (animales.get(masc) instanceof Perro || animales.get(masc) instanceof Gato || animales.get(masc) instanceof Loro) {
+                    String nom = Leer.leerTexto("Que nombre quieres darle? ");
+                    ((Perro) animales.get(masc)).setNombre(nom);
+                } else{
+                    System.out.println("No puede ser mascota ");
+                }
+            }
+            if (opc == 7){
                 break;
             }
         }
